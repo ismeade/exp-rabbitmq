@@ -1,4 +1,4 @@
-package com.ade.exp.rabbitmq.task;
+package com.ade.exp.rabbit.queue.task;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

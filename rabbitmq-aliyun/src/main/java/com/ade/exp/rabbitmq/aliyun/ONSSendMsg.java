@@ -1,4 +1,4 @@
-package com.ade.exp.rabbitmq.alimq;
+package com.ade.exp.rabbitmq.aliyun;
 
 import com.aliyun.openservices.ons.api.*;
 

@@ -7,6 +7,12 @@
     <groupId>com.ade.exp</groupId>
     <artifactId>exp-rabbitmq</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>rabbitmq-aliyun</module>
+        <module>rabbitmq-mqtt</module>
+        <module>rabbitmq-topic</module>
+        <module>rabbitmq-queue</module>
+    </modules>
 
     <packaging>pom</packaging>
 
@@ -58,21 +64,16 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
         </dependency>
-        <dependency>
-            <groupId>org.fusesource.mqtt-client</groupId>
-            <artifactId>mqtt-client</artifactId>
-            <version>1.14</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun.openservices</groupId>
-            <artifactId>ons-client</artifactId>
-            <version>1.2.7.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>3.6.4</version>
-        </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>3.6.4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

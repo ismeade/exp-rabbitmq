@@ -1,10 +1,11 @@
-package com.ade.exp.rabbitmq.alimq;
+package com.ade.exp.rabbitmq.aliyun;
 
 import com.aliyun.openservices.ons.api.*;
 
 import java.util.Properties;
 
 /**
+ *
  * Created by liyang on 2017/3/10.
  */
 public class ONSRecvMsg {
