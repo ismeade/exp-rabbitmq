@@ -27,7 +27,6 @@ public class Subscriber {
                 false, // autoDelete
                 false, // internal
                 null); // 其他参数
-
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, // 队列名称
                 EXCHANGE_NAME, // 交换机名称
