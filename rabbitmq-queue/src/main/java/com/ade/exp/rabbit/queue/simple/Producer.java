@@ -13,7 +13,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Producer {
 
-    public final static String QUEUE_NAME = "rabbitMQ.test";
+    public final static String QUEUE_NAME = "queue.test";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 创建连接工厂
