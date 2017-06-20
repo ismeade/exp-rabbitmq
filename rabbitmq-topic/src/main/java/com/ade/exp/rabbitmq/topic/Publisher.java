@@ -3,6 +3,7 @@ package com.ade.exp.rabbitmq.topic;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 
 /**
  * 消息发布者
@@ -34,8 +35,9 @@ public class Publisher {
 
         for (int i = 1; i <= 10; i++) {
             channel.basicPublish(EXCHANGE_NAME, // 交换机名称
-                    "test", // 主题
+                    "test.t1", // 主题
                     null, // 其他参数
+//                    MessageProperties.PERSISTENT_TEXT_PLAIN, // 其他参数
                     (message + i).getBytes("UTF-8")); // 消息
             System.out.println(" [x] Sent :'" + message + i + "'");
         }

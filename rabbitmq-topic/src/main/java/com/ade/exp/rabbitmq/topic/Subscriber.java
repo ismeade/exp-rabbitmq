@@ -30,7 +30,7 @@ public class Subscriber {
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, // 队列名称
                 EXCHANGE_NAME, // 交换机名称
-                "test"); // 绑定主题
+                "test.#"); // 绑定主题
 
         Consumer consumer = new DefaultConsumer(channel) {
             @Override

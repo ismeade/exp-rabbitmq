@@ -26,10 +26,11 @@ public class Customer {
         Channel channel = connection.createChannel();
         //声明要关注的队列
         channel.queueDeclare(QUEUE_NAME, // 队列名称
-                false, // 是否持久化（true表示是，队列将在服务器重启时生存）
+                true, // 是否持久化（true表示是，队列将在服务器重启时生存）
                 false, // 是否是独占队列（创建者可以使用的私有队列，断开后自动删除）
                 true, // 当所有消费者客户端连接断开时是否自动删除队列
                 null); // 其他参数
+        channel.queueBind(QUEUE_NAME, "topic.test", "test.#"); // 可以直接对接另一个队列
         System.out.println("Customer Waiting Received messages");
         //DefaultConsumer类实现了Consumer接口，通过传入一个频道，
         // 告诉服务器我们需要那个频道的消息，如果频道中有消息，就会执行回调函数handleDelivery
@@ -41,7 +42,7 @@ public class Customer {
             }
         };
         //自动回复队列应答 -- RabbitMQ中的消息确认机制
-        channel.basicConsume(QUEUE_NAME, true, consumer);
+        channel.basicConsume(QUEUE_NAME, false, consumer);
     }
 
 }
