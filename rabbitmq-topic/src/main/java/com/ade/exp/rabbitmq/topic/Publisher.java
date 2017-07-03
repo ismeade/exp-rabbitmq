@@ -24,16 +24,16 @@ public class Publisher {
         Channel channel = connection.createChannel();
 
         //
-        channel.exchangeDeclare(EXCHANGE_NAME, // 交换机名称
-                "topic", // 交换机类型
-                true, // durable
-                false, // autoDelete
-                false, // internal
-                null); // 其他参数
+//        channel.exchangeDeclare(EXCHANGE_NAME, // 交换机名称
+//                "topic", // 交换机类型
+//                true, // durable
+//                true, // autoDelete
+//                false, // internal
+//                null); // 其他参数
 
         String message = "Hello World.";
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 100; i++) {
             channel.basicPublish(EXCHANGE_NAME, // 交换机名称
                     "test.t1", // 主题
                     null, // 其他参数

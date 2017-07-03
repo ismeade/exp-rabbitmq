@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class Subscriber {
 
-    private static final String EXCHANGE_NAME = "topic.test";
+    private static final String EXCHANGE_NAME = "topic.test3";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -24,7 +24,7 @@ public class Subscriber {
         channel.exchangeDeclare(EXCHANGE_NAME, // 交换机名称
                 "topic", // 交换机类型
                 true, // durable
-                false, // autoDelete
+                true, // autoDelete
                 false, // internal
                 null); // 其他参数
         String queueName = channel.queueDeclare().getQueue();
@@ -39,7 +39,7 @@ public class Subscriber {
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message + "'");
             }
         };
-        channel.basicConsume(queueName, true, consumer);
+        channel.basicConsume(queueName, false, consumer);
     }
 
 }

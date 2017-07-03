@@ -3,6 +3,7 @@ package com.ade.exp.rabbit.queue.simple;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeoutException;
 
 /**
