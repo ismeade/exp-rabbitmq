@@ -11,7 +11,8 @@ import com.rabbitmq.client.MessageProperties;
  */
 public class Publisher {
 
-    private static final String EXCHANGE_NAME = "topic.test";
+//    private static final String EXCHANGE_NAME = "topic.test4";
+    private static final String EXCHANGE_NAME = "open-api";
 
     public static void main(String[] args) throws Exception {
 
@@ -33,9 +34,9 @@ public class Publisher {
 
         String message = "Hello World.";
 
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 10; i++) {
             channel.basicPublish(EXCHANGE_NAME, // 交换机名称
-                    "test.t1", // 主题
+                    "resp.t1", // 主题
                     null, // 其他参数
 //                    MessageProperties.PERSISTENT_TEXT_PLAIN, // 其他参数
                     (message + i).getBytes("UTF-8")); // 消息

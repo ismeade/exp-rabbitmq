@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class Subscriber {
 
-    private static final String EXCHANGE_NAME = "topic.test3";
+    private static final String EXCHANGE_NAME = "topic.test4";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
