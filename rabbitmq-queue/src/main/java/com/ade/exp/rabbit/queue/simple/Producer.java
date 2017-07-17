@@ -28,7 +28,7 @@ public class Producer {
         Channel channel = connection.createChannel();
         // 声明一个队列
         channel.queueDeclare(QUEUE_NAME, // 队列名称
-                false, // 是否持久化（true表示是，队列将在服务器重启时生存）
+                true, // 是否持久化（true表示是，队列将在服务器重启时生存）
                 false, // 是否是独占队列（创建者可以使用的私有队列，断开后自动删除）
                 true, // 当所有消费者客户端连接断开时是否自动删除队列
                 null); // 其他参数

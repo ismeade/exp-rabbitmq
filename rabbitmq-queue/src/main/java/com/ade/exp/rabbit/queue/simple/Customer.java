@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Customer {
 
-    private final static String QUEUE_NAME = "rabbitMQ.test";
+    private final static String QUEUE_NAME = "queue.test";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 创建连接工厂
@@ -31,7 +31,7 @@ public class Customer {
                 false, // 是否是独占队列（创建者可以使用的私有队列，断开后自动删除）
                 true, // 当所有消费者客户端连接断开时是否自动删除队列
                 null); // 其他参数
-        channel.queueBind(QUEUE_NAME, "topic.test", "test.#"); // 可以直接对接另一个队列
+//        channel.queueBind(QUEUE_NAME, "topic.test", "test.#"); // 可以直接对接另一个队列
         System.out.println("Customer Waiting Received messages");
         //DefaultConsumer类实现了Consumer接口，通过传入一个频道，
         // 告诉服务器我们需要那个频道的消息，如果频道中有消息，就会执行回调函数handleDelivery
